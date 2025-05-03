@@ -24,3 +24,17 @@ for row in reader:
         ohur.append(ohur_value)
     except ValueError:
         continue
+
+plt.style.use('dark_background')
+fig, ax = plt.subplots()
+
+ax.plot(dates, ohur, color='green')
+ax.fill_between(dates, ohur, color="yellow")
+ax.grid(which='major', color='white', linestyle='--', linewidth=0.5)
+
+ax.set_title("Ohio Unemployment Rate", fontsize=24)
+ax.set_xlabel('', fontsize=16)
+ax.set_ylabel("Unemployment Rate", fontsize=16)
+fig.autofmt_xdate()
+
+plt.show()
